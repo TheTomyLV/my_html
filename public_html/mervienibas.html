@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function onChangeGb(){
+                let Gb = document.getElementById("Gb");
+                let Mb = document.getElementById("Mb");
+                let MiB = document.getElementById("MiB");
+                Mb.value = Gb.value*1000;
+                MiB.value = Gb.value*953.7;
+            }
+            function onChangeMb(){
+                let Gb = document.getElementById("Gb");
+                let Mb = document.getElementById("Mb");
+                let MiB = document.getElementById("MiB");
+                Gb.value = Mb.value/1000;
+                MiB.value = Mb.value*1.049;
+            }
+            function onChangeMiB(){
+                let Gb = document.getElementById("Gb");
+                let Mb = document.getElementById("Mb");
+                let MiB = document.getElementById("MiB");
+                Gb.value = MiB.value*953.7;
+                Mb.value = MiB.value*1.049;
+            }
+            
+        </script>
+        <style>
+            body {
+                background-image: url('images/cipari.jpg');
+            }
+            label {
+                font-size: 20px;
+            }
+            form{
+                background-color: #DCDC00
+            }
+            
+        
+        </style>
+    </head>
+    <body>
+        <h1>Informācijas daudzuma mērvienības</h1>
+        <form id="types">
+          <label for="Gb">GB=</label>
+          <input type="number" id="Gb" value="0" onchange="onChangeGb()"><br>
+          <label for="Mb">MB=</label>
+          <input type="number" id="Mb" value="0" onchange="onChangeMb()"><br>
+          <label for="MiB">Mib=</label>
+          <input type="number" id="MiB" value="0" onchange="onChangeMiB()">
+          
+        </form> 
+    </body>
+</html>
