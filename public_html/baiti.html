@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #speed{
+                border-style: solid;
+                padding: 5px;
+            }
+        </style>
+        <script>
+            function onChangeSek(){
+                let Kib = document.getElementById("KiB");
+                let KB = document.getElementById("KB");
+                let sek = document.getElementById("sek");
+                let answer = document.getElementById("answer");
+                if(KiB.checked){
+                    answer.value = (sek.value/8*1000*1000*25)/1024;
+                }
+                else if(KB.checked){
+                    answer.value = sek.value/8*1000*25;
+                }
+            }
+            function reset(){
+                let Kib = document.getElementById("KiB");
+                let KB = document.getElementById("KB");
+                let sek = document.getElementById("sek");
+                let answer = document.getElementById("answer");
+                Kib.checked = true;
+                sek = "";
+                answer = "";
+            }
+        </script>
+    </head>
+    <body>
+        <div id="speed">
+        <p>Aprēķini cik daudz informācijas var lejuplādēt</p>
+            <form>
+          
+          <input type="number" id="sek" value="" onchange="onChangeSek()" onfocus="reset()">
+          <label for="sek">sekundēs, ja interneta ātrums ir 25 Mbps.</label><br><br>
+            <label>Atbilde</label><br><br>
+          <input type="number" id="answer" value="">
+        
+        <input type="radio" id="KiB" name="value" value="KiB" checked="true" onchange="onChangeSek()">
+        <label for="KiB">KiB</label>
+        
+        <input type="radio" id="KB" name="value" value="KB"  onchange="onChangeSek()">
+        <label for="KB">KB</label>
+          
+        </form> 
+        </div>
+        <a href="index.html"><img src="images/back.png" style="width: 50px; height: 50px"></a>
+
+    </body>
+</html>
